@@ -155,7 +155,7 @@ OR
 }
 ```
 
-## Separating files
+### Separating files
 - In Sass, we can create `partial Sass` files that contain small snippets of CSS that can be included in other Sass files.
 - Cam _modularize_ the CSS and make it easy to maintain projects.
 
@@ -183,7 +183,30 @@ OR
 @import './resets';
 ```
 
+### Sass Functions
+- Declare a function using `@function`
 
+```scss
+
+//create a function
+@function weight($weight-name) {
+    @return map-get($font-weights , $weight-name );
+}
+
+//call the function
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+// & = the parent (.main)
+// Use Interpolation :- Wrap & in #{}
+    #{&}-paragraph {
+    //call function
+        font-weight: weight(bold);
+    }
+}
+
+```
 
 
 
