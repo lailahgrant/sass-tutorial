@@ -208,8 +208,77 @@ OR
 
 ```
 
+### Mixins
+- They're like functions
+- `@mixin`
+- Create the mixin
+- Include the mixin
+- Can also pass `arguments` in `mixins`.
 
+```scss
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.main {
+    @include flexCenter;
+    width: 80%;
+    margin: 0 auto;
+}
+```
 
+- Can also pass `arguments` in `mixins`.
+
+```scss
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+.main {
+    @include flexCenter(column);
+    width: 80%;
+    margin: 0 auto;
+}
+```
+
+> - Functions and Mixins are similar.
+>
+| Functions                                                    | Mixins                      |
+| ------------------------------------------------------------ | --------------------------- |
+| Functions should be used to compute values and return values | Mixins should define styles |
+|                                                              |                             |
+
+###### Use case of Mixins
+- [x] Choosing between Dark and light mode.
+- [x] Media queries.
+
+`Choosing between Dark and light mode`
+
+```scss
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+}
+
+// light theme
+.light {
+    @include theme($light-theme: true);
+}
+```
+
+`Media queries`
+
+```scss
+@mixin mobile {
+    
+}
+```
 
 
