@@ -53,4 +53,9 @@
 > 
 > Don't write in the `.css` file.
 
+#### Sass Variables
+- Sass Variables compile into the actual values.
+
+
+
 
