@@ -155,5 +155,38 @@ OR
 }
 ```
 
+## Separating files
+- In Sass, we can create `partial Sass` files that contain small snippets of CSS that can be included in other Sass files.
+- Cam _modularize_ the CSS and make it easy to maintain projects.
+
+**Partial**
+- A partial is simply a Sass file named with a leading underscore (_).
+- The `_` lets Sass know that the file is only a `partial` and that it shouldn't generate a CSS file.
+- The compiler will ignore files that begin with `_`s.
+- [x] Create a `_resets.scss` file in `scss` folder.
+
+`_resets.scss`
+
+```scss
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+```
+
+- [x] Include the `_resets.scss` in the `style.scss`
+
+`style.scss`
+
+```scss
+@import './resets';
+```
+
+
+
+
+
+
 
 
