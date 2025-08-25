@@ -303,4 +303,31 @@ OR
 }
 ```
 
+### Extensions (Extend an element)
+- Elements extended to will inherit all the styles from the selected elements.
+- Use `@extend`
 
+```scss
+.main {
+    @include flexCenter(row);
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}-paragraph1 {
+        font-weight: weight(medium);
+
+        &:hover {
+            color: pink;
+        }
+    }
+
+    #{&}-paragraph2 {
+        @extend .main-paragraph1;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+}
+```
