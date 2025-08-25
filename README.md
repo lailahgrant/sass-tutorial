@@ -277,7 +277,29 @@ OR
 
 ```scss
 @mixin mobile {
-    
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.main {
+    @include flexCenter(row);
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}-paragraph {
+        font-weight: weight(medium);
+
+        &:hover {
+            color: pink;
+        }
+    }
+
+    //MEDIA QUERY
+    @include mobile {
+        flex-direction: column;
+    }
+
 }
 ```
 
