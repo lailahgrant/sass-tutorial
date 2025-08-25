@@ -53,9 +53,38 @@
 > 
 > Don't write in the `.css` file.
 
+#### CSS Variables
+- CSS Variables compile into CSS variables.
+- Use `--` for CSS variables
+- Use `var()`
+
+```css
+/* put this in the style.scss */
+:root {
+    --primary-color: #272727;
+    --accent-color: #ff652f;
+    --text-color: #fff;
+}
+
+
+body {
+    background: var(--primary-color);
+}
+```
+
 #### Sass Variables
 - Sass Variables compile into the actual values.
+- Use `$` for Sass variables
+- DON'T use `var()`
 
+```scss
+$primary-color: #272727;
+$accent-color: #ff652f;
+$text-color: #fff;
 
+body {
+    background: $primary-color;
+}
+```
 
 
