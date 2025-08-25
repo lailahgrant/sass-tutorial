@@ -90,3 +90,70 @@ body {
 ```
 
 
+### Maps
+> In JavaScript, compare `Maps` to `Arrays`
+- Maps are lists of `key-value` pairs.
+
+```scss
+$font-weights: (
+    "regular" : 400,
+    "medium": 500,
+    "bold" : 700
+);
+```
+
+- Call the maps as follows:-
+```scss
+font-weight: map-get($map: , $key: );
+```
+
+- This is how the `style.scss` file looks like:-
+
+```scss
+//map
+$font-weights: (
+    "regular" : 400,
+    "medium" : 500,
+    "bold" : 700
+);
+
+body{
+    color: $text-color;
+    //call the map
+    font-weight: map-get($font-weights: , bold);
+}
+```
+
+- Have shortcuts in Sass
+```scss
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    .main-paragraph {
+        font-weight: map-get($font-weights, bold);
+    }
+}
+```
+
+OR
+
+- `&` = the parent (.main)
+- Use Interpolation :- Wrap `&` in `#{}`
+
+
+```scss
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+// & = the parent (.main)
+// Use Interpolation :- Wrap & in #{}
+    #{&}-paragraph {
+        font-weight: map-get($font-weights, bold);
+    }
+}
+```
+
+
+
