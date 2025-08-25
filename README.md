@@ -57,6 +57,7 @@
 - CSS Variables compile into CSS variables.
 - Use `--` for CSS variables
 - Use `var()`
+- CSS Variables have **`90%`** compatibility across browsers.
 
 ```css
 /* put this in the style.scss */
@@ -76,6 +77,7 @@ body {
 - Sass Variables compile into the actual values.
 - Use `$` for Sass variables
 - DON'T use `var()`
+- Sass Variables have **`100%`** compatibility across browsers.
 
 ```scss
 $primary-color: #272727;
